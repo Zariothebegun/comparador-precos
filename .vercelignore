@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.git/
+.vercel/
+teste_fornecedores.py
+run.cmd

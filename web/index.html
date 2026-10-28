@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comparador de Preços · Portugal</title>
+  <meta name="description" content="Compara preços de produtos entre lojas portuguesas e descobre onde é mais barato." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <div class="topo-inner">
+      <a class="marca" href="/">
+        <span class="marca-icone" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 17l5-5 4 3 6-7" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="8" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M3 21h18" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Comparador</strong>
+          <small>preços em Portugal</small>
+        </span>
+      </a>
+
+      <div class="fontes" id="fontes" aria-label="Fontes a comparar"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <p class="etiqueta">Pesquisa única · várias lojas</p>
+      <h1>Onde é que isto está<br /><em>mais barato</em>?</h1>
+      <p class="sub">Escreve o nome do produto. Procuro nas fontes disponíveis — supermercados, eletrónica e um comparador com 20+ lojas — e mostro-te a diferença.</p>
+
+      <form class="barra" id="form" autocomplete="off">
+        <span class="lupa" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <input id="q" name="q" type="search" placeholder="Ex: leite meio gordo, iPhone 17e, airfryer…"
+               aria-label="Produto a pesquisar" enterkeyhint="search" />
+        <button type="submit" id="btn">Comparar</button>
+      </form>
+
+      <div class="sugestoes" id="sugestoes">
+        <span>Experimenta:</span>
+        <button type="button" data-t="leite">leite</button>
+        <button type="button" data-t="arroz">arroz</button>
+        <button type="button" data-t="café">café</button>
+        <button type="button" data-t="airfryer">airfryer</button>
+        <button type="button" data-t="iphone 17e">iphone 17e</button>
+      </div>
+    </section>
+
+    <section class="estado" id="estado" hidden></section>
+
+    <section class="resultados" id="resultados" aria-live="polite"></section>
+
+    <section class="vazio" id="vazio">
+      <div class="vazio-arte" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="120" height="120" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="18" y="34" width="84" height="62" rx="10"/>
+          <path d="M18 50h84" />
+          <circle cx="30" cy="42" r="2.5" fill="currentColor"/>
+          <path d="M40 76l10-12 9 10 6-7 15 18" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="vazio-titulo">Ainda não há resultados</p>
+      <p class="vazio-sub">Escreve um produto acima para começar a comparar.</p>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>
+      Preços lidos de páginas públicas das lojas. Podem mudar a qualquer momento —
+      confirma sempre na loja antes de comprar.
+    </p>
+  </footer>
+
+  <!-- painel lateral com as ofertas por loja -->
+  <div class="gaveta-fundo" id="gavetaFundo" hidden></div>
+  <aside class="gaveta" id="gaveta" aria-hidden="true" aria-labelledby="gavetaTitulo">
+    <header class="gaveta-topo">
+      <div>
+        <p class="gaveta-etiqueta">Preços por loja</p>
+        <h2 id="gavetaTitulo">—</h2>
+      </div>
+      <button class="fechar" id="fechar" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+    <div class="gaveta-corpo" id="gavetaCorpo"></div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
