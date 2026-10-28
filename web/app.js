@@ -132,7 +132,7 @@
             </span>`;
         })
         .join("") +
-      (dados.fontes && dados.fontes.kuantokusta
+      (dados.fontes && dados.fontes.kuantokusta && dados.fontes.kuantokusta.ok
         ? '<span class="estado-nota">KuantoKusta agrega 20+ lojas por artigo</span>'
         : "");
 

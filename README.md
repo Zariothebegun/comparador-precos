@@ -1,6 +1,8 @@
 # Comparador de Preços · Portugal
 
-App local que pesquisa um produto em várias lojas portuguesas, mostra o preço em
+**Online:** <https://comparador-precos-six.vercel.app>
+
+App que pesquisa um produto em várias lojas portuguesas, mostra o preço em
 cada uma e diz qual é a **mais barata**.
 
 Corre no teu PC, abre no browser e não precisa de conta nem de instalação de
@@ -154,9 +156,11 @@ Fluxo recomendado (sem instalar nada):
 
 O endereço público fica no formato `https://<projeto>.vercel.app`.
 
-**Nota:** o Vercel corre a função a partir dos IPs dele. Se alguma loja
-bloquear esses IPs, o erro aparece na barra de estado por fonte — não é
-escondido nem substituído por dados falsos.
+**Nota:** o Vercel corre a função a partir dos IPs dele. O KuantoKusta devolve
+**403 Forbidden** a esses IPs (bloqueio por datacenter), por isso no site
+público ficam ativas as outras três fontes. O erro aparece na barra de estado,
+não é escondido nem substituído por dados falsos. Localmente, o KuantoKusta
+continua a funcionar e a listar 20+ lojas por artigo.
 
 ---
 
